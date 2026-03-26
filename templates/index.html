@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Budžeta aplikācija</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="wrapper">
+
+    <div class="app">
+        <h1>💰 Budget Tracker</h1>
+
+        <form method="post" action="/pievienot">
+            <input type="number" step="0.01" name="summa" placeholder="Summa" required>
+            <input type="text" name="apraksts" placeholder="Apraksts" required>
+
+            <div class="row">
+                <select name="tips">
+                    <option>Ienākums</option>
+                    <option>Izdevums</option>
+                </select>
+
+                <select name="valuta">
+                    <option value="€">EUR (€)</option>
+                    <option value="$">USD ($)</option>
+                    <option value="£">GBP (£)</option>
+                    <option value="¥">JPY (¥)</option>
+                </select>
+            </div>
+
+            <button type="submit">+ Pievienot</button>
+        </form>
+
+        <div class="balance">
+            <h2>Bilance</h2>
+            <p>{{ "%.2f"|format(balanss) }} €</p>
+        </div>
+
+        <div class="list">
+            <h3>Ieraksti</h3>
+
+            {% for ier in dati %}
+            <div class="item {{ 'income' if ier.tips == 'Ienākums' else 'expense' }}">
+                <div>
+                    <strong>{{ "%.2f"|format(ier.summa) }} {{ ier.valuta }}</strong>
+                    <p>{{ ier.apraksts }}</p>
+                </div>
+                <a href="/dzest/{{ loop.index0 }}">✖</a>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

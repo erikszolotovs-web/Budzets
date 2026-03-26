@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* centrēšana pa vidu */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* galvenais lodziņš */
+.app {
+    width: 420px;
+    margin-top: 50px;
+    color: white;
+}
+
+/* kartes */
+.app > * {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+h1 {
+    background: none;
+    color: white;
+    text-align: center;
+    box-shadow: none;
+}
+
+/* input */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+/* poga */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* bilance */
+.balance {
+    text-align: center;
+}
+
+.balance p {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* ieraksti */
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f7f7f7;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 8px 0;
+}
+
+.income {
+    border-left: 5px solid green;
+}
+
+.expense {
+    border-left: 5px solid red;
+}
+
+.item p {
+    margin: 0;
+    font-size: 13px;
+    color: #555;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+    font-size: 18px;
+}
